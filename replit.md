@@ -49,11 +49,11 @@
 - **Discord:** https://discord.gg/MwaDWK5SUb
 
 ### Navigation Structure
-Single-page application with smooth scrolling to sections:
-1. **Home** - Hero section
-2. **Features** - Why choose Concept Customs
-3. **Services** - What they offer
-4. **Contact** - Footer with contact info
+Multi-page application with React Router:
+1. **Home** - Main landing page (Hero + Services sections)
+2. **Ordering** - Separate page with order form
+3. **Services** - Smooth scroll on home page
+4. **Contact** - Smooth scroll to footer (home page) or link (other pages)
 
 ### Page Sections
 
