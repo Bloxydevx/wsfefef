@@ -174,6 +174,7 @@ OUR FEATURES:
 OUR TEAM:
 - rally_boy143: Executive, Lead of Operations - Livery Design & Branding specialist (150+ projects)
 - bloxydev__: Co Executive, Co-Lead of Operations - UI/UX & Graphics specialist (130+ projects)
+- kingdummyj: Concept Custom's 2025 Best Designer! - Livery Designs, Clothing & Discord Development specialist (200+ projects)
 
 WEBSITE NAVIGATION:
 - Home: Main landing page with features and services

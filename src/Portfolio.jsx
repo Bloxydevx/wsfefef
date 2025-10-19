@@ -53,6 +53,32 @@ function Portfolio() {
           category: 'UI/UX'
         }
       ]
+    },
+    {
+      name: 'kingdummyj',
+      role: "Concept Custom's 2025 Best Designer!",
+      specialty: 'Livery Designs, Clothing & Discord Development',
+      rating: 5,
+      projectsCompleted: 200,
+      image: 'https://cdn.discordapp.com/avatars/823595188031193148/15f8d87f59ab39a217fad6aaaf8a5f01.png',
+      featured: true,
+      portfolio: [
+        {
+          title: 'Custom Department Livery Pack',
+          description: 'Comprehensive livery pack for multiple department vehicles with consistent branding and modern aesthetics.',
+          category: 'Livery'
+        },
+        {
+          title: 'Server Clothing Collection',
+          description: 'Custom clothing designs for in-game characters including uniforms, casual wear, and branded apparel.',
+          category: 'Clothing'
+        },
+        {
+          title: 'Discord Bot Development',
+          description: 'Custom Discord bot with automated features, moderation tools, and server management capabilities.',
+          category: 'Development'
+        }
+      ]
     }
   ];
 
