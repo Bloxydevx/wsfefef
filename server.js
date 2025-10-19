@@ -13,6 +13,9 @@ app.use(express.json());
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 
+// ✅ Serve static files from the root directory
+app.use(express.static(__dirname));
+
 // Verify environment variables on startup
 const requiredEnvVars = ['VITE_DESIGNER_PASSWORD', 'DISCORD_WEBHOOK_URL', 'OPENAI_API_KEY'];
 const missingVars = requiredEnvVars.filter(varName => !process.env[varName]);
@@ -24,10 +27,8 @@ if (missingVars.length > 0) {
   console.log('✅ All required environment variables are configured');
 }
 
-// Countdown is disabled by default - only activated when set via API
 let countdownEndTime = 0;
 let countdownActive = false;
-
 console.log('⏸️  Countdown is disabled by default. Use /api/set-countdown to enable.');
 
 app.get('/api/countdown-status', (req, res) => {
@@ -200,13 +201,8 @@ app.post('/api/chat', async (req, res) => {
   }
 });
 
-// Serve index.html from root
-app.get('/', (req, res) => {
-  res.sendFile(path.join(__dirname, 'index.html'));
-});
-
-// Catch-all route to prevent Cannot GET /
-app.get('*', (req, res) => {
+// ✅ Serve index.html for all unmatched routes
+app.get('/*', (req, res) => {
   res.sendFile(path.join(__dirname, 'index.html'));
 });
 
