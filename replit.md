@@ -27,8 +27,10 @@
 │   ├── Features.jsx         # Why Choose Us section (4 features)
 │   ├── ServicesList.jsx     # Services offered (3 main services)
 │   ├── Ordering.jsx         # Order form with Discord webhook integration
+│   ├── Portfolio.jsx        # Designer portfolio showcase page
 │   ├── DesignerAccess.jsx   # Password-protected designer handbook
 │   ├── MeetTheTeam.jsx      # Team leadership page with images
+│   ├── ChatWidget.jsx       # AI-powered live chat widget (OpenAI)
 │   ├── Footer.jsx           # Contact info and links
 │   └── index.jsx            # Application entry point
 ├── public/
@@ -36,7 +38,7 @@
 │   │   ├── rally_boy143.png # Team member image
 │   │   └── bloxydev__.png   # Team member image
 │   └── favicon.svg
-├── server.js                # Express backend for secure Discord webhook proxy
+├── server.js                # Express backend for webhooks & OpenAI API
 ├── vite.config.js           # Vite configuration (port 5000, strictPort)
 ├── package.json             # Dependencies and scripts
 └── tsconfig.json
@@ -58,10 +60,16 @@
 Multi-page application with React Router:
 1. **Home** - Main landing page (Hero + Features + Services sections)
 2. **Ordering** - Separate page with order form
-3. **Designer Access** - Password-protected designer handbook (password: ConceptCustomsDesign)
-4. **Meet the Team** - Leadership team page with rally_boy143 and bloxydev__
-5. **Terms of Service** - Legal ToS page (/tos) - linked from footer
-6. **Privacy Policy** - Privacy policy page (/privacy) - linked from footer
+3. **Portfolio** - Designer showcase page featuring best designers and their work
+4. **Designer Access** - Password-protected designer handbook
+5. **Meet the Team** - Leadership team page with rally_boy143 and bloxydev__
+6. **Terms of Service** - Legal ToS page (/tos) - linked from footer
+7. **Privacy Policy** - Privacy policy page (/privacy) - linked from footer
+
+**AI Live Chat:**
+- Floating chat widget available on all pages (bottom right)
+- Powered by OpenAI GPT-3.5-turbo
+- Provides instant customer support about services, pricing, and ordering
 
 **Mobile Responsive:**
 - Hamburger menu on mobile devices (screens < 768px)
@@ -125,6 +133,41 @@ Comprehensive privacy policy including:
 - Third-party service links
 - COPPA compliance
 - Effective date: October 18, 2025
+
+#### Portfolio Page (`Portfolio.jsx`)
+Showcases the elite design team and their work:
+- **Featured Designers:**
+  - rally_boy143 (Executive, Lead Of Operations) - Livery Design & Branding specialist
+  - bloxydev__ (Co Executive, Co-Lead Of Operations) - UI/UX & Graphics specialist
+- **For Each Designer:**
+  - Profile image with featured badge
+  - 5-star rating display
+  - Projects completed count (150+ and 130+ respectively)
+  - Specialty areas
+  - Featured work portfolio with 3 sample projects each
+  - Project categories (Livery, Logo, Branding, Graphics, UI/UX)
+- **Call-to-Actions:**
+  - Join Discord to work with specific designers
+  - Place order button
+- Fully responsive design for mobile and desktop
+
+#### AI Chat Widget (`ChatWidget.jsx`)
+AI-powered customer support chat available on all pages:
+- **Features:**
+  - Floating button in bottom right corner
+  - Opens to full chat interface
+  - Message history maintained during session
+  - Real-time responses powered by OpenAI GPT-3.5-turbo
+  - Loading indicators and smooth animations
+- **Backend Integration:**
+  - Securely communicates with `/api/chat` endpoint
+  - API key protected server-side
+  - System prompt customized for Concept Customs services
+- **User Experience:**
+  - Greeting message on first open
+  - Mobile-responsive chat window
+  - Graceful error handling with Discord fallback
+  - Auto-scrolls to latest messages
 
 ### Component Details
 
@@ -230,9 +273,12 @@ Three main service offerings:
 - tailwindcss (4.0.4) - Styling
 
 ### Backend (Active)
-- express (5.1.0) - API server for secure webhook proxy
+- express (5.1.0) - API server for secure webhook proxy and AI chat
 - cors (2.8.5) - Cross-origin resource sharing
-- *Note: server.js provides secure Discord webhook integration for order submissions*
+- *Note: server.js provides:*
+  - Discord webhook integration for order submissions
+  - Designer password verification
+  - OpenAI chat API proxy for AI customer support
 
 ---
 
@@ -256,7 +302,26 @@ Three main service offerings:
 ---
 
 ## Recent Changes
-- **Oct 19, 2025 (Latest):**
+- **Oct 19, 2025 (Latest Update):**
+  - **Added AI Live Chat:** Implemented OpenAI-powered customer support chatbot
+    - Created ChatWidget.jsx component with floating chat interface
+    - Added `/api/chat` backend endpoint for OpenAI API integration
+    - Uses GPT-3.5-turbo with custom system prompt about Concept Customs services
+    - Available on all pages with mobile-responsive design
+    - Secure API key management through environment variables
+  - **Added Portfolio Page:** New designer showcase page
+    - Features rally_boy143 and bloxydev__ with their specialties
+    - Displays 5-star ratings and project counts (150+ and 130+)
+    - Shows 3 featured projects per designer with categories
+    - Fully responsive with professional card-based design
+  - **Updated Navigation:** Added Portfolio link between Ordering and Designer Access
+  - **Environment Variable Improvements:** Added startup validation for all required secrets
+  - **Backend Enhancements:** server.js now handles three API endpoints:
+    - `/api/verify-designer-password` - Designer authentication
+    - `/api/submit-order` - Discord webhook proxy for orders
+    - `/api/chat` - OpenAI chat completions for AI support
+
+- **Oct 19, 2025 (Earlier):**
   - **Fixed API Communication:** Added Vite proxy configuration to route `/api/*` requests to backend on port 3001
   - Updated frontend to use relative API paths instead of absolute URLs with port numbers
   - Fixed designer password authentication system

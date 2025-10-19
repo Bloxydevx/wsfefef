@@ -4,9 +4,11 @@ import { Menu, X } from "lucide-react";
 import Home from "./Home";
 import Ordering from "./Ordering";
 import DesignerAccess from "./DesignerAccess";
+import Portfolio from "./Portfolio";
 import TermsOfService from "./TermsOfService";
 import PrivacyPolicy from "./PrivacyPolicy";
 import MeetTheTeam from "./MeetTheTeam";
+import ChatWidget from "./ChatWidget";
 
 function App() {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
@@ -46,6 +48,12 @@ function App() {
                 className="hover:text-yellow-400 cursor-pointer transition-colors"
               >
                 Ordering
+              </Link>
+              <Link
+                to="/portfolio"
+                className="hover:text-yellow-400 cursor-pointer transition-colors"
+              >
+                Portfolio
               </Link>
               <Link
                 to="/designer-access"
@@ -89,6 +97,13 @@ function App() {
                 Ordering
               </Link>
               <Link
+                to="/portfolio"
+                onClick={closeMobileMenu}
+                className="block text-white hover:text-yellow-400 transition-colors py-2"
+              >
+                Portfolio
+              </Link>
+              <Link
                 to="/designer-access"
                 onClick={closeMobileMenu}
                 className="block text-white hover:text-yellow-400 transition-colors py-2"
@@ -111,11 +126,15 @@ function App() {
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/ordering" element={<Ordering />} />
+        <Route path="/portfolio" element={<Portfolio />} />
         <Route path="/designer-access" element={<DesignerAccess />} />
         <Route path="/meet-the-team" element={<MeetTheTeam />} />
         <Route path="/tos" element={<TermsOfService />} />
         <Route path="/privacy" element={<PrivacyPolicy />} />
       </Routes>
+
+      {/* AI Chat Widget */}
+      <ChatWidget />
     </div>
   );
 }
