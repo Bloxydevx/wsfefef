@@ -18,6 +18,58 @@ if (missingVars.length > 0) {
   console.log('✅ All required environment variables are configured');
 }
 
+let countdownEndTime = Date.now() + (9 * 60 * 60 * 1000);
+let countdownActive = true;
+
+console.log(`🕐 Countdown initialized: ends at ${new Date(countdownEndTime).toLocaleString()}`);
+
+app.get('/api/countdown-status', (req, res) => {
+  try {
+    const now = Date.now();
+    const isActive = countdownActive && now < countdownEndTime;
+    const timeRemaining = countdownActive ? Math.max(0, countdownEndTime - now) : 0;
+
+    res.json({
+      active: isActive,
+      endTime: countdownEndTime,
+      timeRemaining: timeRemaining,
+      completed: countdownActive && now >= countdownEndTime
+    });
+  } catch (error) {
+    console.error('Error getting countdown status:', error);
+    res.status(500).json({ error: 'Failed to get countdown status' });
+  }
+});
+
+app.post('/api/set-countdown', (req, res) => {
+  try {
+    const { password, hours } = req.body;
+    const correctPassword = process.env.VITE_DESIGNER_PASSWORD;
+
+    if (password !== correctPassword) {
+      return res.status(401).json({ error: 'Unauthorized' });
+    }
+
+    if (typeof hours !== 'number' || hours <= 0) {
+      return res.status(400).json({ error: 'Invalid hours value' });
+    }
+
+    countdownEndTime = Date.now() + (hours * 60 * 60 * 1000);
+    countdownActive = true;
+
+    console.log(`🔄 Countdown rescheduled: ${hours} hours, ends at ${new Date(countdownEndTime).toLocaleString()}`);
+
+    res.json({
+      success: true,
+      endTime: countdownEndTime,
+      message: `Countdown set for ${hours} hours`
+    });
+  } catch (error) {
+    console.error('Error setting countdown:', error);
+    res.status(500).json({ error: 'Failed to set countdown' });
+  }
+});
+
 app.post('/api/verify-designer-password', (req, res) => {
   try {
     const { password } = req.body;
