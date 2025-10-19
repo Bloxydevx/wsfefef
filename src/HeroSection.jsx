@@ -6,10 +6,10 @@ function HeroSection() {
       <div className="container mx-auto px-4 z-10 relative">
         {/* Main Heading with Emphasis on "Customs" */}
         <h1 className="text-5xl font-extrabold leading-tight tracking-wide">
-          Concept <span className="text-pink-300">Customs</span>
+          Concept <span className="text-pink-300">Custom</span>
         </h1>
         <p className="mt-4 text-lg text-gray-200 max-w-3xl mx-auto">
-          Concept Customs is your go-to ERLC design hub—specializing in sleek liveries, polished graphics, logos, and more. Whether you're building a professional server or revamping your brand, we've got you covered.
+          Concept Custom is your go-to ERLC design hub—specializing in sleek liveries, polished graphics, logos, and more. Whether you're building a professional server or revamping your brand, we've got you covered.
         </p>
 
         {/* Join Button */}

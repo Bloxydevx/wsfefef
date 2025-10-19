@@ -6,7 +6,7 @@ function ServicesList() {
       <div className="container mx-auto text-center">
         <h2 className="text-4xl font-extrabold">Our Services</h2>
         <p className="text-lg text-gray-200 mt-4 max-w-2xl mx-auto">
-          Concept Customs delivers high-quality visual designs tailored for ERLC servers. Here's what we offer:
+          Concept Custom delivers high-quality visual designs tailored for ERLC servers. Here's what we offer:
         </p>
 
         <div className="mt-12 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8">

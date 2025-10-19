@@ -60,7 +60,7 @@ function ComingSoon() {
         </div>
 
         <h1 className="text-6xl md:text-8xl font-extrabold text-white mb-6 animate-fadeIn">
-          Concept Customs
+          Concept Custom
         </h1>
 
         <div className="bg-white/10 backdrop-blur-xl rounded-3xl p-8 md:p-12 shadow-2xl border border-white/20 mb-8 animate-slideUp">

@@ -56,7 +56,7 @@ function App() {
               onClick={closeMobileMenu}
               className="text-2xl sm:text-3xl font-bold text-white hover:text-yellow-400 transition-all duration-300 transform hover:scale-105"
             >
-              Concept Customs
+              Concept Custom
             </Link>
 
             {/* Desktop Navigation */}

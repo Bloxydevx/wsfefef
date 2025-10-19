@@ -42,7 +42,7 @@ function Footer() {
 
       {/* Copyright */}
       <p className="mt-6 text-sm text-gray-200">
-        © 2025 Concept Customs. All rights reserved.
+        © 2025 Concept Custom. All rights reserved.
       </p>
     </footer>
   );

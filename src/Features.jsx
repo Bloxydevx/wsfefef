@@ -5,7 +5,7 @@ function Features() {
   return (
     <section className="py-20 bg-gradient-to-r from-indigo-600 to-purple-700 text-white">
       <div className="container mx-auto px-6">
-        <h2 className="text-4xl font-extrabold text-center mb-8">Why Choose Concept Customs?</h2>
+        <h2 className="text-4xl font-extrabold text-center mb-8">Why Choose Concept Custom?</h2>
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-10 text-center">
 
           {/* Feature 1 */}

@@ -27,7 +27,7 @@ function MeetTheTeam() {
             <Users className="mx-auto mb-4 text-yellow-400" size={64} />
             <h1 className="text-4xl sm:text-5xl font-extrabold mb-4">Meet the Team</h1>
             <p className="text-lg sm:text-xl text-gray-200 max-w-3xl mx-auto">
-              Get to know the leadership behind Concept Customs. Our dedicated team works hard to deliver exceptional design services and maintain a thriving creative community.
+              Get to know the leadership behind Concept Custom. Our dedicated team works hard to deliver exceptional design services and maintain a thriving creative community.
             </p>
           </div>
 
@@ -60,7 +60,7 @@ function MeetTheTeam() {
           <div className="mt-12 text-center bg-white bg-opacity-10 backdrop-blur-md p-6 sm:p-8 rounded-lg shadow-xl border border-white/20 max-w-3xl mx-auto">
             <h3 className="text-2xl sm:text-3xl font-bold mb-4">Want to Join Our Team?</h3>
             <p className="text-base sm:text-lg text-gray-200 mb-6">
-              We're always looking for talented designers and staff members. Join our Discord to learn about opportunities and get involved with the Concept Customs community!
+              We're always looking for talented designers and staff members. Join our Discord to learn about opportunities and get involved with the Concept Custom community!
             </p>
             <a
               href="https://discord.gg/concept25"

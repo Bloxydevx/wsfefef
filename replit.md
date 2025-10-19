@@ -1,7 +1,7 @@
-# Concept Customs Website
+# Concept Custom Website
 
 ## Overview
-Concept Customs is a professional design hub specializing in ERLC (Elenium Roleplay) server designs. The website serves as a landing page and portfolio, showcasing services for custom liveries, logos, and graphic design work tailored for ERLC gaming communities. The project aims to provide a comprehensive online presence, including client ordering, designer access, and AI-powered customer support.
+Concept Custom is a professional design hub specializing in ERLC (Elenium Roleplay) server designs. The website serves as a landing page and portfolio, showcasing services for custom liveries, logos, and graphic design work tailored for ERLC gaming communities. The project aims to provide a comprehensive online presence, including client ordering, designer access, and AI-powered customer support.
 
 ## User Preferences
 I prefer iterative development with a focus on clear, concise explanations. Please ask before making major architectural changes or significant modifications to existing components. Ensure all new features are fully responsive and integrate seamlessly with the existing design system. Do not make changes to the folder `public/images/`.

@@ -42,7 +42,7 @@ function WelcomeModal() {
             Welcome to
           </h1>
           <h2 className="text-5xl md:text-7xl font-extrabold text-yellow-400 mb-6 drop-shadow-lg">
-            Concept Customs
+            Concept Custom
           </h2>
 
           <div className="bg-white/10 backdrop-blur-md rounded-2xl p-6 mb-6 border border-white/20">

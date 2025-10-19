@@ -41,7 +41,7 @@ function DesignerAccess() {
           <div className="text-center mb-6">
             <Lock className="mx-auto mb-4 text-yellow-400" size={48} />
             <h1 className="text-3xl font-extrabold mb-2">Designer Access</h1>
-            <p className="text-gray-200">This area is restricted to Concept Customs designers only.</p>
+            <p className="text-gray-200">This area is restricted to Concept Custom designers only.</p>
           </div>
 
           <form onSubmit={handleSubmit} className="space-y-4">
@@ -83,7 +83,7 @@ function DesignerAccess() {
       <div className="container mx-auto px-6">
         <div className="max-w-5xl mx-auto">
           <h1 className="text-5xl font-extrabold text-center mb-4">Designer Handbook</h1>
-          <p className="text-center text-xl text-gray-200 mb-8">Welcome to the Concept Customs Designer Handbook!</p>
+          <p className="text-center text-xl text-gray-200 mb-8">Welcome to the Concept Custom Designer Handbook!</p>
 
           <div className="bg-white bg-opacity-10 backdrop-blur-md p-8 rounded-lg shadow-xl border border-white/20 space-y-8">
             
@@ -189,10 +189,10 @@ function DesignerAccess() {
             <section>
               <h2 className="text-3xl font-bold mb-4 text-pink-300">Asset Usage Guidelines</h2>
               <p className="text-lg">
-                You are allowed to use assets provided in #assets by Concept Customs staff, as well as any assets you've created or personally own.
+                You are allowed to use assets provided in #assets by Concept Custom staff, as well as any assets you've created or personally own.
               </p>
               <p className="text-lg mt-2">
-                However, you may not claim assets made by others as your own, whether they come from Concept Customs or outside sources. Always give credit where it's due, and only use materials you have the rights to.
+                However, you may not claim assets made by others as your own, whether they come from Concept Custom or outside sources. Always give credit where it's due, and only use materials you have the rights to.
               </p>
             </section>
 
@@ -303,7 +303,7 @@ function DesignerAccess() {
                 <p><code className="text-yellow-400">/qualitycheck</code> – Quality assurance tool</p>
                 <p><code className="text-yellow-400">/paymentedit</code> - Sends a payment of an exact amount</p>
                 <p><code className="text-yellow-400">/tax</code> - Tax's an amount by 30%</p>
-                <p><code className="text-yellow-400">/watermark</code> - Place Concept Customs Logo on your work</p>
+                <p><code className="text-yellow-400">/watermark</code> - Place Concept Custom Logo on your work</p>
               </div>
             </section>
 

@@ -95,7 +95,7 @@ app.post('/api/submit-order', async (req, res) => {
         ],
         timestamp: new Date().toISOString(),
         footer: {
-          text: "Concept Customs Order System"
+          text: "Concept Custom Order System"
         }
       }]
     };
@@ -153,7 +153,7 @@ app.post('/api/chat', async (req, res) => {
         messages: [
           {
             role: 'system',
-            content: `You are a helpful customer support assistant for Concept Customs, a professional ERLC (Elenium Roleplay) design hub specializing in custom liveries, logos, and graphic design.
+            content: `You are a helpful customer support assistant for Concept Custom, a professional ERLC (Elenium Roleplay) design hub specializing in custom liveries, logos, and graphic design.
 
 ABOUT US:
 - Your go-to ERLC design hub for sleek liveries, polished graphics, logos, and more

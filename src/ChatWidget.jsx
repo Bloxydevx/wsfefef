@@ -6,7 +6,7 @@ function ChatWidget() {
   const [messages, setMessages] = useState([
     {
       role: 'assistant',
-      content: 'Hi! Welcome to Concept Customs! How can I help you today? Feel free to ask about our services, pricing, or how to get started with your custom design!'
+      content: 'Hi! Welcome to Concept Custom! How can I help you today? Feel free to ask about our services, pricing, or how to get started with your custom design!'
     }
   ]);
   const [input, setInput] = useState('');
@@ -80,7 +80,7 @@ function ChatWidget() {
             <div className="flex items-center gap-2">
               <MessageCircle size={24} />
               <div>
-                <h3 className="font-bold">Concept Customs</h3>
+                <h3 className="font-bold">Concept Custom</h3>
                 <p className="text-xs text-gray-200">AI Assistant</p>
               </div>
             </div>
