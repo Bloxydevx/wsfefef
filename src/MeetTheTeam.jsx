@@ -8,14 +8,14 @@ function MeetTheTeam() {
       title: "Executive",
       role: "Lead Of Operations",
       gradient: "from-pink-500 to-purple-600",
-      image: "/images/rally_boy143.png"
+      image: "https://cdn.discordapp.com/avatars/1038617345163276369/8be35951ff58e9ec052f9fe2f265966c.png"
     },
     {
       username: "bloxydev__",
       title: "Co Executive",
       role: "Co-Lead Of Operations",
       gradient: "from-indigo-500 to-blue-600",
-      image: "/images/bloxydev__.png"
+      image: "https://cdn.discordapp.com/avatars/762104476785311796/5d59b1d221f10d46ed7f4f01f9a1a636.png"
     }
   ];
 
