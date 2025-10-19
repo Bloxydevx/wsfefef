@@ -1,11 +1,13 @@
 import express from 'express';
 import cors from 'cors';
+import fetch from 'node-fetch'; // for Node < 18; remove if Node 18+ has native fetch
 import { fileURLToPath } from 'url';
-import { dirname, join, resolve } from 'path';
+import { dirname, resolve } from 'path';
 
 const app = express();
 const PORT = process.env.PORT || 8080;
 
+// ===== Middleware =====
 app.use(cors());
 app.use(express.json());
 
@@ -159,13 +161,9 @@ app.post('/api/chat', async (req, res) => {
   }
 });
 
-// ===== Serve React frontend =====
-const frontendPath = join(__dirname, '../frontend/dist'); // adjust if needed
-app.use(express.static(frontendPath));
-
-// Regex catch-all for React routes (avoids PathError)
+// ===== Serve frontend (single index.html) =====
 app.get(/^(?!\/api\/).*/, (req, res) => {
-  res.sendFile(resolve(frontendPath, 'index.html'));
+  res.sendFile(resolve(__dirname, 'index.html')); // points directly to your single index.html
 });
 
 // ===== Start server =====
