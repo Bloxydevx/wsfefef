@@ -175,7 +175,7 @@ function Ordering() {
           <div className="mt-8 text-center border-t border-white/20 pt-8">
             <p className="text-lg mb-4">Prefer to chat directly?</p>
             <a
-              href="https://discord.gg/MwaDWK5SUb"
+              href="https://discord.gg/concept25"
               target="_blank"
               rel="noopener noreferrer"
               className="inline-block px-6 py-3 bg-indigo-500 text-white font-semibold rounded-lg hover:bg-indigo-600 transition-all duration-200"

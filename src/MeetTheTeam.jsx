@@ -63,7 +63,7 @@ function MeetTheTeam() {
               We're always looking for talented designers and staff members. Join our Discord to learn about opportunities and get involved with the Concept Customs community!
             </p>
             <a
-              href="https://discord.gg/MwaDWK5SUb"
+              href="https://discord.gg/concept25"
               target="_blank"
               rel="noopener noreferrer"
               className="inline-block px-6 sm:px-8 py-3 sm:py-4 bg-yellow-400 text-black font-semibold rounded-lg hover:bg-yellow-500 transition-all duration-200 transform hover:scale-105"

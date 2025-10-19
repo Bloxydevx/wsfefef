@@ -55,7 +55,7 @@ function ChatWidget() {
       console.error('Chat error:', error);
       setMessages([...updatedMessages, { 
         role: 'assistant', 
-        content: 'Sorry, I encountered an error. Please try joining our Discord at https://discord.gg/MwaDWK5SUb for immediate assistance!' 
+        content: 'Sorry, I encountered an error. Please try joining our Discord at https://discord.gg/concept25 for immediate assistance!' 
       }]);
     } finally {
       setIsLoading(false);

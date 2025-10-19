@@ -13,7 +13,7 @@ function HeroSection() {
         </p>
 
         {/* Join Button */}
-        <a href="https://discord.gg/MwaDWK5SUb" target="_blank" rel="noopener noreferrer">
+        <a href="https://discord.gg/concept25" target="_blank" rel="noopener noreferrer">
           <button className="mt-8 px-8 py-4 bg-yellow-400 text-black font-semibold rounded-lg transform transition-all hover:scale-105 duration-200 z-20 relative">
             Join the Server
           </button>

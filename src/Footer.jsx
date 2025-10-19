@@ -14,7 +14,7 @@ function Footer() {
       {/* Social Links */}
       <div className="flex justify-center space-x-8 mt-4">
         <a
-          href="https://discord.gg/MwaDWK5SUb"
+          href="https://discord.gg/concept25"
           target="_blank"
           rel="noopener noreferrer"
           className="text-blue-200 hover:underline"

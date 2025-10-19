@@ -162,7 +162,7 @@ function Portfolio() {
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <a
-                href="https://discord.gg/MwaDWK5SUb"
+                href="https://discord.gg/concept25"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="px-8 py-3 bg-yellow-400 text-black font-semibold rounded-lg hover:bg-yellow-500 transition-all duration-200"
