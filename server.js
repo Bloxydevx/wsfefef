@@ -163,8 +163,8 @@ app.post('/api/chat', async (req, res) => {
 const frontendPath = join(__dirname, '../frontend/dist'); // adjust if needed
 app.use(express.static(frontendPath));
 
-// Root + React routes
-app.get('*', (req, res) => {
+// Catch-all React route (fixed PathError)
+app.get('/*', (req, res) => {
   res.sendFile(resolve(frontendPath, 'index.html'));
 });
 
