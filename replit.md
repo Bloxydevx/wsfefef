@@ -54,6 +54,8 @@ Multi-page application with React Router:
 2. **Ordering** - Separate page with order form
 3. **Designer Access** - Password-protected designer handbook (password: ConceptCustomsDesign)
 4. **Contact** - Smooth scroll to footer (home page) or link (other pages)
+5. **Terms of Service** - Legal ToS page (/tos) - linked from footer
+6. **Privacy Policy** - Privacy policy page (/privacy) - linked from footer
 
 ### Page Sections
 
@@ -207,6 +209,8 @@ Three main service offerings:
   - Created password-protected Designer Access page with full Designer Handbook
   - Updated navigation: Home | Ordering | Designer Access | Contact
   - Kept Features section on main home page
+  - Added Terms of Service page (/tos) with complete legal terms
+  - Added Privacy Policy page (/privacy) with comprehensive privacy information
 
 ---
 
@@ -216,10 +220,6 @@ Three main service offerings:
 1. ⚠️ **Tailwind CDN Warning** - Currently using cdn.tailwindcss.com (not recommended for production)
    - Should migrate to PostCSS plugin or Tailwind CLI
    - Current warning in browser console
-
-2. **Missing Pages**
-   - `/tos` - Terms of Service page (linked but not created)
-   - `/privacy` - Privacy Policy page (linked but not created)
 
 3. **Background Image**
    - Hero section has placeholder for background image

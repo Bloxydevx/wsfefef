@@ -4,6 +4,8 @@ import { Link as ScrollLink } from "react-scroll";
 import Home from "./Home";
 import Ordering from "./Ordering";
 import DesignerAccess from "./DesignerAccess";
+import TermsOfService from "./TermsOfService";
+import PrivacyPolicy from "./PrivacyPolicy";
 
 function App() {
   const location = useLocation();
@@ -63,6 +65,8 @@ function App() {
         <Route path="/" element={<Home />} />
         <Route path="/ordering" element={<Ordering />} />
         <Route path="/designer-access" element={<DesignerAccess />} />
+        <Route path="/tos" element={<TermsOfService />} />
+        <Route path="/privacy" element={<PrivacyPolicy />} />
       </Routes>
     </div>
   );
