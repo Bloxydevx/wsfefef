@@ -25,8 +25,12 @@ function ComingSoon() {
 
       if (difference <= 0) {
         setTimeLeft({ hours: 0, minutes: 0, seconds: 0 });
-        localStorage.setItem('countdownCompleted', 'true');
-        window.location.reload();
+        if (localStorage.getItem('countdownCompleted') !== 'true') {
+          localStorage.setItem('countdownCompleted', 'true');
+          setTimeout(() => {
+            window.location.href = window.location.href.split('?')[0];
+          }, 500);
+        }
         return;
       }
 
