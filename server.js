@@ -1,6 +1,7 @@
 import express from 'express';
 import cors from 'cors';
-import path from 'path';
+import { fileURLToPath } from 'url';
+import { dirname, join, resolve } from 'path';
 
 const app = express();
 const PORT = process.env.PORT || 8080;
@@ -22,6 +23,10 @@ if (missingVars.length > 0) {
 let countdownEndTime = 0;
 let countdownActive = false;
 console.log('⏸️ Countdown is disabled by default. Use /api/set-countdown to enable.');
+
+// ===== ES module __dirname fix =====
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = dirname(__filename);
 
 // ===== API Endpoints =====
 
@@ -155,15 +160,13 @@ app.post('/api/chat', async (req, res) => {
 });
 
 // ===== Serve React frontend =====
-const frontendPath = path.join(__dirname, '../frontend/dist'); // adjust path if needed
+const frontendPath = join(__dirname, '../frontend/dist'); // adjust if needed
 app.use(express.static(frontendPath));
 
-// Root and React routes
+// Root + React routes
 app.get('*', (req, res) => {
-  res.sendFile(path.resolve(frontendPath, 'index.html'));
+  res.sendFile(resolve(frontendPath, 'index.html'));
 });
 
 // ===== Start server =====
-app.listen(PORT, () => {
-  console.log(`✅ Backend server running on port ${PORT}`);
-});
+app.listen(PORT, () => console.log(`✅ Backend server running on port ${PORT}`));
