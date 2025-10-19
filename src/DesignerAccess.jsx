@@ -11,8 +11,7 @@ function DesignerAccess() {
     setError("");
     
     try {
-      const apiUrl = `${window.location.protocol}//${window.location.hostname}:3001/api/verify-designer-password`;
-      const response = await fetch(apiUrl, {
+      const response = await fetch('/api/verify-designer-password', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',

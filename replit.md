@@ -186,9 +186,17 @@ Three main service offerings:
     host: '0.0.0.0',    // Allows external connections
     port: 5000,          // Required for Replit webview
     strictPort: true,    // Fails if port unavailable
+    proxy: {
+      '/api': {
+        target: 'http://localhost:3001',  // Proxy API requests to backend
+        changeOrigin: true,
+      }
+    }
   }
 }
 ```
+
+**API Proxy:** The Vite dev server proxies all `/api/*` requests to the Express backend on port 3001. This enables the frontend to communicate with the backend using relative URLs (e.g., `/api/verify-designer-password`) instead of absolute URLs with port numbers, ensuring compatibility in Replit's environment.
 
 ### Workflow Setup
 - **Frontend Server**
@@ -248,7 +256,14 @@ Three main service offerings:
 ---
 
 ## Recent Changes
-- **Oct 19, 2025:** 
+- **Oct 19, 2025 (Latest):**
+  - **Fixed API Communication:** Added Vite proxy configuration to route `/api/*` requests to backend on port 3001
+  - Updated frontend to use relative API paths instead of absolute URLs with port numbers
+  - Fixed designer password authentication system
+  - Fixed Discord webhook integration for order submissions
+  - Both features now fully functional in Replit's environment
+
+- **Oct 19, 2025 (Earlier):** 
   - Fixed Vite configuration to strictly bind to port 5000 for Replit webview compatibility
   - Added React Router for multi-page navigation
   - Created separate Ordering page with order form

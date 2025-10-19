@@ -24,10 +24,8 @@ function Ordering() {
     setIsSubmitting(true);
     setSubmitStatus(null);
 
-    const apiUrl = `${window.location.protocol}//${window.location.hostname}:3001/api/submit-order`;
-
     try {
-      const response = await fetch(apiUrl, {
+      const response = await fetch('/api/submit-order', {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
