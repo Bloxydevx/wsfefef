@@ -6,14 +6,31 @@ function DesignerAccess() {
   const [isAuthenticated, setIsAuthenticated] = useState(false);
   const [error, setError] = useState("");
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    const correctPassword = import.meta.env.VITE_DESIGNER_PASSWORD || "ConceptCustomsDesign";
-    if (password === correctPassword) {
-      setIsAuthenticated(true);
-      setError("");
-    } else {
-      setError("Incorrect password. Please try again.");
+    setError("");
+    
+    try {
+      const apiUrl = `${window.location.protocol}//${window.location.hostname}:3001/api/verify-designer-password`;
+      const response = await fetch(apiUrl, {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({ password })
+      });
+
+      const data = await response.json();
+
+      if (response.ok && data.valid) {
+        setIsAuthenticated(true);
+        setError("");
+      } else {
+        setError("Incorrect password. Please try again.");
+        setPassword("");
+      }
+    } catch (error) {
+      setError("Authentication system unavailable. Please try again later.");
       setPassword("");
     }
   };

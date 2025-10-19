@@ -7,13 +7,15 @@ function MeetTheTeam() {
       username: "rally_boy143",
       title: "Executive",
       role: "Lead Of Operations",
-      gradient: "from-pink-500 to-purple-600"
+      gradient: "from-pink-500 to-purple-600",
+      image: "/images/rally_boy143.png"
     },
     {
       username: "bloxydev__",
       title: "Co Executive",
       role: "Co-Lead Of Operations",
-      gradient: "from-indigo-500 to-blue-600"
+      gradient: "from-indigo-500 to-blue-600",
+      image: "/images/bloxydev__.png"
     }
   ];
 
@@ -35,8 +37,16 @@ function MeetTheTeam() {
                 key={index}
                 className="bg-white bg-opacity-10 backdrop-blur-md p-8 rounded-lg shadow-xl border border-white/20 hover:shadow-2xl transition-all duration-300 transform hover:scale-105"
               >
-                <div className={`w-24 h-24 sm:w-32 sm:h-32 mx-auto mb-6 rounded-full bg-gradient-to-r ${member.gradient} flex items-center justify-center text-4xl sm:text-5xl font-bold`}>
-                  {member.username.charAt(0).toUpperCase()}
+                <div className={`w-24 h-24 sm:w-32 sm:h-32 mx-auto mb-6 rounded-full bg-gradient-to-r ${member.gradient} flex items-center justify-center text-4xl sm:text-5xl font-bold overflow-hidden`}>
+                  <img 
+                    src={member.image} 
+                    alt={member.username}
+                    className="w-full h-full object-cover"
+                    onError={(e) => {
+                      e.target.style.display = 'none';
+                      e.target.parentElement.innerHTML = member.username.charAt(0).toUpperCase();
+                    }}
+                  />
                 </div>
                 <h2 className="text-2xl sm:text-3xl font-bold text-center mb-2">{member.username}</h2>
                 <div className="text-center">

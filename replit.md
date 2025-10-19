@@ -26,11 +26,17 @@
 │   ├── HeroSection.jsx      # Landing section with CTA
 │   ├── Features.jsx         # Why Choose Us section (4 features)
 │   ├── ServicesList.jsx     # Services offered (3 main services)
+│   ├── Ordering.jsx         # Order form with Discord webhook integration
+│   ├── DesignerAccess.jsx   # Password-protected designer handbook
+│   ├── MeetTheTeam.jsx      # Team leadership page with images
 │   ├── Footer.jsx           # Contact info and links
-│   ├── server.js            # Express backend for Discord OAuth (not actively used)
 │   └── index.jsx            # Application entry point
 ├── public/
+│   ├── images/
+│   │   ├── rally_boy143.png # Team member image
+│   │   └── bloxydev__.png   # Team member image
 │   └── favicon.svg
+├── server.js                # Express backend for secure Discord webhook proxy
 ├── vite.config.js           # Vite configuration (port 5000, strictPort)
 ├── package.json             # Dependencies and scripts
 └── tsconfig.json
@@ -77,11 +83,12 @@ Standalone ordering form where customers can:
 - Select service type (Livery, Logo, UI/Graphics, Other)
 - Describe project details
 - Specify budget
-- Submit order or join Discord
+- Submit order via secure backend API (sends to Discord webhook)
+- Alternative option to join Discord directly
 
 #### Designer Access Page (`DesignerAccess.jsx`)
 Password-protected page for team designers:
-- **Password:** ConceptCustomsDesign
+- **Password:** Stored securely in VITE_DESIGNER_PASSWORD environment variable
 - Contains full Designer Handbook with:
   - Rules and expectations
   - Pay rates and promotions
@@ -93,9 +100,10 @@ Password-protected page for team designers:
 
 #### Meet the Team Page (`MeetTheTeam.jsx`)
 Showcases the leadership team:
-- **rally_boy143** - Executive, Lead Of Operations
-- **bloxydev__** - Co Executive, Co-Lead Of Operations
-- Each member has a gradient avatar with their initial
+- **rally_boy143** - Executive, Lead Of Operations (with image support)
+- **bloxydev__** - Co Executive, Co-Lead Of Operations (with image support)
+- Images can be uploaded to public/images/ folder
+- Fallback to gradient avatar with initial if image not available
 - Includes call-to-action to join Discord
 - Fully responsive for mobile and desktop
 
@@ -183,11 +191,19 @@ Three main service offerings:
 ```
 
 ### Workflow Setup
-- **Name:** Server
-- **Command:** `npm run dev`
-- **Port:** 5000
-- **Output Type:** webview
-- **Status:** Running
+- **Frontend Server**
+  - **Name:** Server
+  - **Command:** `npm run dev`
+  - **Port:** 5000
+  - **Output Type:** webview
+  - **Status:** Running
+
+- **Backend API**
+  - **Name:** Backend
+  - **Command:** `node server.js`
+  - **Port:** 3001
+  - **Output Type:** console
+  - **Status:** Running
 
 ### Available Scripts
 - `npm run dev` - Start development server (Vite)
@@ -205,12 +221,10 @@ Three main service offerings:
 - react-icons (5.4.0) - Additional icons
 - tailwindcss (4.0.4) - Styling
 
-### Backend (Currently Unused)
-- express (4.21.2)
-- cors (2.8.5)
-- dotenv (16.4.7)
-- node-fetch (3.3.2)
-- *Note: server.js exists for Discord OAuth but is not actively running*
+### Backend (Active)
+- express (5.1.0) - API server for secure webhook proxy
+- cors (2.8.5) - Cross-origin resource sharing
+- *Note: server.js provides secure Discord webhook integration for order submissions*
 
 ---
 
@@ -247,6 +261,15 @@ Three main service offerings:
   - Implemented mobile-responsive navigation with hamburger menu
   - Added Meet the Team page featuring rally_boy143 (Executive) and bloxydev__ (Co Executive)
   - All pages now fully mobile accessible with responsive design
+  - **Security Improvements:**
+    - Implemented secure backend API (server.js) for Discord webhook integration
+    - Moved designer password to VITE_DESIGNER_PASSWORD environment variable
+    - Removed hardcoded secrets from client-side code
+    - Order form now submits through backend API to protect webhook URL
+  - **Team Images:**
+    - Added image support for team members (rally_boy143 and bloxydev__)
+    - Images can be placed in public/images/ directory
+    - Graceful fallback to gradient avatars if images unavailable
 
 ---
 
@@ -261,9 +284,10 @@ Three main service offerings:
    - Hero section has placeholder for background image
    - Path: `/path/to/design-showcase.jpg` (not implemented)
 
-4. **Unused Backend**
-   - `server.js` contains Discord OAuth logic but isn't running
-   - May need integration for future features
+4. **Team Member Images**
+   - Upload rally_boy143.png and bloxydev__.png to public/images/ directory
+   - Images should be square format (recommended: 512x512px or higher)
+   - Supported formats: PNG, JPG, WebP
 
 ---
 

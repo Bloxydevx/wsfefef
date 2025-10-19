@@ -1,6 +1,67 @@
-import React from "react";
+import React, { useState } from "react";
 
 function Ordering() {
+  const [formData, setFormData] = useState({
+    name: "",
+    email: "",
+    service: "",
+    details: "",
+    budget: ""
+  });
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [submitStatus, setSubmitStatus] = useState(null);
+
+  const handleChange = (e) => {
+    const { id, value } = e.target;
+    setFormData(prev => ({
+      ...prev,
+      [id]: value
+    }));
+  };
+
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    setIsSubmitting(true);
+    setSubmitStatus(null);
+
+    const apiUrl = `${window.location.protocol}//${window.location.hostname}:3001/api/submit-order`;
+
+    try {
+      const response = await fetch(apiUrl, {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(formData)
+      });
+
+      const data = await response.json();
+
+      if (response.ok && data.success) {
+        setSubmitStatus({ 
+          success: true, 
+          message: "Order request submitted successfully! We'll get back to you soon." 
+        });
+        setFormData({
+          name: "",
+          email: "",
+          service: "",
+          details: "",
+          budget: ""
+        });
+      } else {
+        throw new Error(data.error || "Failed to submit");
+      }
+    } catch (error) {
+      setSubmitStatus({ 
+        success: false, 
+        message: "Failed to submit order. Please try joining our Discord instead." 
+      });
+    } finally {
+      setIsSubmitting(false);
+    }
+  };
+
   return (
     <div className="min-h-screen bg-gradient-to-r from-indigo-600 to-purple-700 text-white pt-20">
       <div className="container mx-auto px-6 py-16">
@@ -10,7 +71,7 @@ function Ordering() {
         </p>
 
         <div className="max-w-4xl mx-auto bg-white bg-opacity-10 backdrop-blur-md p-8 rounded-lg shadow-xl border border-white/20">
-          <form className="space-y-6">
+          <form onSubmit={handleSubmit} className="space-y-6">
             {/* Name */}
             <div>
               <label htmlFor="name" className="block text-sm font-semibold mb-2">
@@ -19,8 +80,11 @@ function Ordering() {
               <input
                 type="text"
                 id="name"
+                value={formData.name}
+                onChange={handleChange}
                 className="w-full px-4 py-3 rounded-lg bg-white bg-opacity-20 border border-white/30 text-white placeholder-gray-300 focus:outline-none focus:ring-2 focus:ring-pink-300"
                 placeholder="Enter your name"
+                required
               />
             </div>
 
@@ -32,8 +96,11 @@ function Ordering() {
               <input
                 type="email"
                 id="email"
+                value={formData.email}
+                onChange={handleChange}
                 className="w-full px-4 py-3 rounded-lg bg-white bg-opacity-20 border border-white/30 text-white placeholder-gray-300 focus:outline-none focus:ring-2 focus:ring-pink-300"
                 placeholder="your.email@example.com"
+                required
               />
             </div>
 
@@ -44,7 +111,10 @@ function Ordering() {
               </label>
               <select
                 id="service"
+                value={formData.service}
+                onChange={handleChange}
                 className="w-full px-4 py-3 rounded-lg bg-white bg-opacity-20 border border-white/30 text-white focus:outline-none focus:ring-2 focus:ring-pink-300"
+                required
               >
                 <option value="" className="text-gray-900">Select a service</option>
                 <option value="livery" className="text-gray-900">Livery Design</option>
@@ -61,9 +131,12 @@ function Ordering() {
               </label>
               <textarea
                 id="details"
+                value={formData.details}
+                onChange={handleChange}
                 rows="5"
                 className="w-full px-4 py-3 rounded-lg bg-white bg-opacity-20 border border-white/30 text-white placeholder-gray-300 focus:outline-none focus:ring-2 focus:ring-pink-300"
                 placeholder="Describe your project, including any specific requirements, colors, themes, or references..."
+                required
               ></textarea>
             </div>
 
@@ -75,18 +148,28 @@ function Ordering() {
               <input
                 type="text"
                 id="budget"
+                value={formData.budget}
+                onChange={handleChange}
                 className="w-full px-4 py-3 rounded-lg bg-white bg-opacity-20 border border-white/30 text-white placeholder-gray-300 focus:outline-none focus:ring-2 focus:ring-pink-300"
                 placeholder="e.g., $50-$100"
               />
             </div>
 
+            {/* Status Messages */}
+            {submitStatus && (
+              <div className={`p-4 rounded-lg ${submitStatus.success ? 'bg-green-500 bg-opacity-20 border border-green-400 text-green-100' : 'bg-red-500 bg-opacity-20 border border-red-400 text-red-100'}`}>
+                {submitStatus.message}
+              </div>
+            )}
+
             {/* Submit Button */}
             <div className="text-center">
               <button
                 type="submit"
-                className="px-8 py-4 bg-yellow-400 text-black font-semibold rounded-lg transform transition-all hover:scale-105 duration-200"
+                disabled={isSubmitting}
+                className={`px-8 py-4 bg-yellow-400 text-black font-semibold rounded-lg transform transition-all hover:scale-105 duration-200 ${isSubmitting ? 'opacity-50 cursor-not-allowed' : ''}`}
               >
-                Submit Order Request
+                {isSubmitting ? "Submitting..." : "Submit Order Request"}
               </button>
             </div>
           </form>
