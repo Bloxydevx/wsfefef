@@ -1,2 +1,38 @@
-main {
+body {
+  background: linear-gradient(135deg, #007bff, #0056b3);
+  background-size: cover;
+  background-position: center;
+  color: #fff; /* White text for contrast */
+  font-family: 'Roboto', sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+.App {
+  text-align: center;
+  padding-top: 50px;
+}
+
+/* Optional: Styling for the hero section to make it stand out */
+#hero {
+  padding: 100px 0;
+  text-align: center;
+  color: #fff;
+  background: rgba(0, 0, 0, 0.5); /* Dark overlay for text visibility */
+}
+
+/* Customize buttons */
+button {
+  background-color: #007bff;
+  color: white;
+  padding: 10px 20px;
+  border-radius: 30px;
+  border: none;
+  cursor: pointer;
+  font-size: 16px;
+  transition: background-color 0.3s ease;
+}
+
+button:hover {
+  background-color: #0056b3;
 }
