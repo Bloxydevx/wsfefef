@@ -50,12 +50,41 @@
 
 ### Navigation Structure
 Multi-page application with React Router:
-1. **Home** - Main landing page (Hero + Services sections)
+1. **Home** - Main landing page (Hero + Features + Services sections)
 2. **Ordering** - Separate page with order form
-3. **Services** - Smooth scroll on home page
+3. **Designer Access** - Password-protected designer handbook (password: ConceptCustomsDesign)
 4. **Contact** - Smooth scroll to footer (home page) or link (other pages)
 
 ### Page Sections
+
+#### Home Page (`Home.jsx`)
+Displays the main landing page with all sections:
+- Hero Section
+- Features Section
+- Services Section
+- Footer
+
+#### Ordering Page (`Ordering.jsx`)
+Standalone ordering form where customers can:
+- Enter their name and email
+- Select service type (Livery, Logo, UI/Graphics, Other)
+- Describe project details
+- Specify budget
+- Submit order or join Discord
+
+#### Designer Access Page (`DesignerAccess.jsx`)
+Password-protected page for team designers:
+- **Password:** ConceptCustomsDesign
+- Contains full Designer Handbook with:
+  - Rules and expectations
+  - Pay rates and promotions
+  - Quality control procedures
+  - Order logging instructions
+  - Command reference
+  - Bot hosting prices
+  - Asset usage guidelines
+
+### Component Details
 
 #### 1. Hero Section (`HeroSection.jsx`)
 - Gradient background (indigo-600 to purple-700)
@@ -171,7 +200,13 @@ Three main service offerings:
 ---
 
 ## Recent Changes
-- **Oct 19, 2025:** Fixed Vite configuration to strictly bind to port 5000 for Replit webview compatibility
+- **Oct 19, 2025:** 
+  - Fixed Vite configuration to strictly bind to port 5000 for Replit webview compatibility
+  - Added React Router for multi-page navigation
+  - Created separate Ordering page with order form
+  - Created password-protected Designer Access page with full Designer Handbook
+  - Updated navigation: Home | Ordering | Designer Access | Contact
+  - Kept Features section on main home page
 
 ---
 

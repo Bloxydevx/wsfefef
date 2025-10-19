@@ -1,0 +1,169 @@
+
+Welcome to the Concept Customs Designer Handbook!
+Hey there, creative soul — we’re thrilled to have you on board! This handbook is your all-in-one guide to being a successful designer within our server. Inside, you’ll find everything you need to know about how we work, what’s expected, where to find key resources, and how to grow within our design community.
+Whether you’re brand new or already pDesigner Handbook
+Handbook Intro
+art of the team, this guide will help you get up to speed and thrive in your role. If you have any questions, don’t hesitate to reach out to the handbook creator or a member of HR+ — we’re all here to support each other.
+
+⚠️Please Note:
+ Any copying, redistribution, or misuse of this handbook will result in a permanent blacklist from the Creative Department — and possibly the entire staff team.
+Rules
+
+1. Meet Deadlines
+Submit your work on time. Let us know early if you need more time.
+2. Keep Work High Quality
+Do your best — no rushed or low-effort designs.
+3. Be Original
+Use your own work. No copying or stealing from others.
+4. Take Feedback Well
+Be open to changes and fix things when asked. If the ticket was closed for more than 48 hours.
+5. Stay Organized
+Name files properly and include everything needed (like names of the product).
+6. Communicate
+Check in regularly and let the team know if you’re busy or need help.
+7. Keep Things Private
+Don’t share client work, files, or team info without permission.
+8. Be Respectful
+No drama, no hate, no harassment. Be kind to everyone.
+10. No Self-Promotion or Commission Hunting
+Don’t use the server to find your own clients unless given permission.
+⚠️Please Note:
+ Any copying, redistribution, or misuse of this handbook will result in a permanent blacklist from the Creative Department — and possibly the entire staff team.
+Designer Rates
+
+Designer Pay Rates
+Intern — 85%
+Designer — 90%
+Senior Designer — 95%
+Example: If a design costs 100 Robux, you’ll receive 85 Robux as an Intern, 90 Robux as a Designer, or 95 Robux as a Senior Designer.
+
+You can get promoted by:
+Completing a high number of orders
+Getting strong client reviews
+Staying active and contributing consistently
+Promotions are based on performance, not time. Keep delivering great work and engaging with the team to move up!
+
+⚠️Please Note:
+ Any copying, redistribution, or misuse of this handbook will result in a permanent blacklist from the Creative Department — and possibly the entire staff team.
+Concept Group
+
+Payment Eligibility Notice
+To receive payment for your work, you must be a member of our Roblox group for at least 2 weeks.
+This is a Roblox requirement, and we can’t process payouts until that time has passed. Please make sure you’ve joined the group and remain in it to stay eligible for payment.
+Let a staff member know if you have any questions or need help checking your join date.
+
+⚠️Please Note:
+ Any copying, redistribution, or misuse of this handbook will result in a permanent blacklist from the Creative Department — and possibly the entire staff team.
+Quality Control
+
+Quality Check Required Before Delivery
+Before sending your final design to the customer, you must use the /qualitycheck command and submit your work for review.
+Place your design in the quality check, and wait for it to be accepted by a Quality Department member or HR. Only after it’s approved can you send the finished product to the client.
+This ensures we maintain high standards and deliver top-quality work every time.
+If you're unsure how to use the command, feel free to ask a team lead or HR for help.
+
+⚠️Please Note:
+ Any copying, redistribution, or misuse of this handbook will result in a permanent blacklist from the Creative Department — and possibly the entire staff team.
+Rank Requests
+
+Important: Group Rank Required for Payment
+To receive your payment, you must request your correct rank in the Roblox group.
+Make sure you’ve joined the group and then message a staff member to request your rank (Intern, Designer, or Senior Designer).
+Payouts will not be processed until your group rank matches your role.
+Make sure to follow this format below:
+# <:Information:1339467554036519004> | Rank Request
+Roblox Username:
+Are you in group?: YES/NO
+-# **DO NOT PING ANYONE!**
+
+⚠️Please Note:
+ Any copying, redistribution, or misuse of this handbook will result in a permanent blacklist from the Creative Department — and possibly the entire staff team.
+Assets
+
+Asset Usage Guidelines
+You are allowed to use assets provided in #assets by Concept Customs staff, as well as any assets you’ve created or personally own.
+However, you may not claim assets made by others as your own, whether they come from Concept Customs or outside sources.
+Always give credit where it’s due, and only use materials you have the rights to. Misuse of assets can lead to warnings or removal from the team.
+If you're unsure whether an asset is allowed, ask a lead before using it.
+
+⚠️Please Note:
+ Any copying, redistribution, or misuse of this handbook will result in a permanent blacklist from the Creative Department — and possibly the entire staff team.
+Order Logging
+
+Order Logging Instructions
+When using the /orderlog command, please make sure to:
+Select the correct customer
+Select the correct designer
+Log the order amount without tax (just the base price)
+Accurate logging helps us track payments and activity correctly, so double-check everything before submitting.
+If you're unsure how to use the command, ask a member of the HR team.
+
+⚠️Please Note:
+ Any copying, redistribution, or misuse of this handbook will result in a permanent blacklist from the Creative Department — and possibly the entire staff team.
+Bot Hosting Prices
+
+To proceed with bot hosting payment, please ping @rally_boy143 for approval and make sure to include tax in the total amount.
+1 months - 300 Robux
+2 months - 400 Robux
+4 months - 500 Robux
+6 months - 700 Robux
+8 months - 900 Robux 
+10 months - 1000 Robux
+1 year - 1,200 Robux
+
+⚠️Please Note:
+ Any copying, redistribution, or misuse of this handbook will result in a permanent blacklist from the Creative Department — and possibly the entire staff team.
+Mandatory Order & Quality Control Procedures
+
+All designers are reminded that, effective immediately, they must log all customer orders without applying tax. Additionally, every item you create must be fully quality controlled before it is handed off to the customer. These steps are mandatory and are in place to ensure accuracy, professionalism, and consistency in our customer experience.
+If, for any reason, the payment verification does not come through or fails to send, you are required to ping @rally_boy143 directly to confirm whether the customer has actually paid. No items should be delivered or moved forward without confirmed payment.
+Once you’ve completed the order, ping @rally_boy143 or @harisfnihg to send the "Thank you message" at the end. The submission must include everything that was ordered—no partial or incomplete deliveries. All codes associated with the order must also be sent together at the end of the order, to ensure the customer receives everything they need in one place and for proper recordkeeping.
+Failure to follow any of these steps—including incorrect tax logging, skipping quality control, not verifying payment, or submitting incomplete orders—will result in a two-day suspension. If you have any questions or are unsure about the process, please speak with me or your supervisor before proceeding. Thank you for your attention to these important procedures. Also, please use /customer and choose the customer that paid for the items. Also log the order at the end of the order without tax!
+
+⚠️Please Note:
+ Any copying, redistribution, or misuse of this handbook will result in a permanent blacklist from the Creative Department — and possibly the entire staff team.
+Expectations
+
+Order Turnaround Times!
+• Small Orders – Completed in just 1–2 days
+ • Large Orders – Ready within 1 week
+Create Your Own Packages – and Save Big!
+Whether you're into clothing packages or livery packages, you can now build your own, and get a percentage of it depending on your rank! This is the perfect time to bring your packages to Concept Customs! Open a HR ticket and request to sell a package!
+Want to Teach?
+You can now apply to be a course instructor and share your skills with the community. Plus, you’ll get the chance to release free items and build your brand while giving back!
+
+⚠️Please Note:
+ Any copying, redistribution, or misuse of this handbook will result in a permanent blacklist from the Creative Department — and possibly the entire staff team.
+Claiming Orders
+
+Designers are allowed to claim only two orders at a time to ensure quality and fairness across the team. Once a designer completes their current order and it is officially closed, they can then claim a new one. 
+This system is in place not only to maintain focused, high-quality work but also to give all designers an equal opportunity to access available orders. 
+By limiting claims to one order at a time, the process stays organized and promotes a fair distribution of work among all team members. Claiming more than one will result in punishment.
+
+⚠️Please Note:
+ Any copying, redistribution, or misuse of this handbook will result in a permanent blacklist from the Creative Department — and possibly the entire staff team.
+Reminder Logs
+
+When logging orders without tax in ⁠order-logs you should log the order the original price without tax. 
+Designers should use the /paymentedit command, which sets the game pass to the specified amount, ensuring the customer pays the correct amount.
+It’s important that designers log their own orders properly, if you fail to do so and the customer proceeds with payment, the designer becomes ineligible for payment until the order is properly logged using the /orderlog command and the /tax command is applied to account for any tax requirements. 
+This process ensures accurate tracking of sales and payments while maintaining compliance with tax regulations. All orders should be completed within 4 days unless there are loads to do. You can get this extended by contacting a HR member.
+
+⚠️Please Note:
+ Any copying, redistribution, or misuse of this handbook will result in a permanent blacklist from the Creative Department — and possibly the entire staff team.
+Commands Usage
+
+Hello, below will show you what each command is used for below. Any questions feel free to open a general support ticket in ⁠#dashboard!
+/customer @user - Give this to the client who paid.
+/review @user - Customer is able to give the designer a review.
+/funds – Checks group funds (Executive+)
+/group - Sends a link to our official Roblox group.
+/membercount – Display server members
+/orderlog – Logs orders when completed (without tax)
+/qualitycheck – Quality assurance tool
+/paymentedit - Sends a payment of an exact amount (make sure a confirmation message is sent)
+/tax - Tax’s an amount by 30%
+/watermark - Place Concept Customs Logo on your work to prevent it from getting stolen.
+
+⚠️Please Note:
+ Any copying, redistribution, or misuse of this handbook will result in a permanent blacklist from the Creative Department — and possibly the entire staff team.

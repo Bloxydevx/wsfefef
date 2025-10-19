@@ -3,6 +3,7 @@ import { Routes, Route, Link, useLocation } from "react-router-dom";
 import { Link as ScrollLink } from "react-scroll";
 import Home from "./Home";
 import Ordering from "./Ordering";
+import DesignerAccess from "./DesignerAccess";
 
 function App() {
   const location = useLocation();
@@ -29,25 +30,21 @@ function App() {
             >
               Ordering
             </Link>
+            <Link
+              to="/designer-access"
+              className="hover:text-yellow-400 cursor-pointer transition-colors"
+            >
+              Designer Access
+            </Link>
             {isHomePage && (
-              <>
-                <ScrollLink
-                  to="services"
-                  smooth={true}
-                  duration={500}
-                  className="hover:text-yellow-400 cursor-pointer transition-colors"
-                >
-                  Services
-                </ScrollLink>
-                <ScrollLink
-                  to="footer"
-                  smooth={true}
-                  duration={500}
-                  className="hover:text-yellow-400 cursor-pointer transition-colors"
-                >
-                  Contact
-                </ScrollLink>
-              </>
+              <ScrollLink
+                to="footer"
+                smooth={true}
+                duration={500}
+                className="hover:text-yellow-400 cursor-pointer transition-colors"
+              >
+                Contact
+              </ScrollLink>
             )}
             {!isHomePage && (
               <Link
@@ -65,6 +62,7 @@ function App() {
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/ordering" element={<Ordering />} />
+        <Route path="/designer-access" element={<DesignerAccess />} />
       </Routes>
     </div>
   );
