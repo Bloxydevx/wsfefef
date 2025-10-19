@@ -13,7 +13,7 @@ function ComingSoon() {
     let endTime;
 
     if (!countdownEndTime) {
-      endTime = Date.now() + (1 * 60 * 1000);
+      endTime = Date.now() + (9 * 60 * 60 * 1000);
       localStorage.setItem('countdownEndTime', endTime);
     } else {
       endTime = parseInt(countdownEndTime);
