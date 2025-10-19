@@ -218,7 +218,7 @@ function DesignerAccess() {
                 If, for any reason, the payment verification does not come through or fails to send, you are required to ping @rally_boy143 directly to confirm whether the customer has actually paid.
               </p>
               <p className="text-lg mb-2">
-                Once you've completed the order, ping @rally_boy143 or @harisfnihg to send the "Thank you message" at the end. The submission must include everything that was ordered—no partial or incomplete deliveries.
+                Once you've completed the order, ping @rally_boy143 or @bloxydev__ to send the "Thank you message" at the end. The submission must include everything that was ordered—no partial or incomplete deliveries.
               </p>
               <p className="text-lg font-semibold text-yellow-300">
                 Failure to follow any of these steps will result in a two-day suspension.
