@@ -15,7 +15,7 @@ The project is a React 18.2.0 single-page application built with Vite 5.0.0 and 
 - **Secure Backend API:** An Express.js server (`server.js`) handles sensitive operations such as Discord webhook integration for order submissions, designer password verification, and proxying OpenAI API calls, protecting API keys and sensitive information.
 - **Responsive Design:** All pages and components are optimized for mobile, tablet, and desktop viewing, utilizing a hamburger menu for mobile navigation.
 - **Designer Access:** A password-protected section provides internal documentation for team designers.
-- **Portfolio Showcase:** A dedicated page highlights lead designers and their work with detailed project samples and specialties.
+- **Portfolio Showcase:** A dedicated page highlights kingdummyj, Concept Custom's 2025 Best Designer, with detailed project samples showcasing Livery Designs, Clothing & Discord Development work.
 - **Vite Configuration:** Configured to run on port 5000 with a proxy for `/api` requests to the backend server on port 3001, ensuring seamless communication in the Replit environment.
 - **Design System:** Utilizes a consistent color scheme (gradient purple/indigo with pink and yellow accents) and component patterns like glassmorphism cards and hover effects.
 

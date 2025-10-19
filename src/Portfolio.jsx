@@ -3,58 +3,6 @@ import { Star, Award, Trophy } from 'lucide-react';
 function Portfolio() {
   const designers = [
     {
-      name: 'rally_boy143',
-      role: 'Executive, Lead Of Operations',
-      specialty: 'Livery Design & Branding',
-      rating: 5,
-      projectsCompleted: 150,
-      image: '/images/rally_boy143.png',
-      featured: true,
-      portfolio: [
-        {
-          title: 'LSPD Elite Patrol Unit',
-          description: 'Custom livery design for Los Santos Police Department featuring modern graphics and department branding.',
-          category: 'Livery'
-        },
-        {
-          title: 'Fire Rescue Command',
-          description: 'Complete vehicle wrap for Fire Department command vehicles with high-visibility design.',
-          category: 'Livery'
-        },
-        {
-          title: 'Sheriff Department Rebrand',
-          description: 'Full department rebranding including logos, liveries, and graphic assets.',
-          category: 'Branding'
-        }
-      ]
-    },
-    {
-      name: 'bloxydev__',
-      role: 'Co Executive, Co-Lead Of Operations',
-      specialty: 'UI/UX & Graphics',
-      rating: 5,
-      projectsCompleted: 130,
-      image: '/images/bloxydev__.png',
-      featured: true,
-      portfolio: [
-        {
-          title: 'Server Banner Pack',
-          description: 'Professional Discord and social media banner set with cohesive branding.',
-          category: 'Graphics'
-        },
-        {
-          title: 'Agency Logo Suite',
-          description: 'Complete logo design package with multiple variations and formats.',
-          category: 'Logo'
-        },
-        {
-          title: 'UI Interface Kit',
-          description: 'Custom UI elements and graphics for in-game server interface.',
-          category: 'UI/UX'
-        }
-      ]
-    },
-    {
       name: 'kingdummyj',
       role: "Concept Custom's 2025 Best Designer!",
       specialty: 'Livery Designs, Clothing & Discord Development',
