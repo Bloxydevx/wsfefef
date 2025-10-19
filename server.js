@@ -1,7 +1,6 @@
 import express from 'express';
 import cors from 'cors';
 import path from 'path';
-import fetch from 'node-fetch'; // Node 18+ can use native fetch
 
 const app = express();
 const PORT = process.env.PORT || 8080;
@@ -11,7 +10,7 @@ app.use(express.json());
 
 // ===== Verify environment variables =====
 const requiredEnvVars = ['VITE_DESIGNER_PASSWORD', 'DISCORD_WEBHOOK_URL', 'OPENAI_API_KEY'];
-const missingVars = requiredEnvVars.filter(varName => !process.env[varName]);
+const missingVars = requiredEnvVars.filter(v => !process.env[v]);
 if (missingVars.length > 0) {
   console.error(`❌ Missing required environment variables: ${missingVars.join(', ')}`);
   process.exit(1);
@@ -156,13 +155,15 @@ app.post('/api/chat', async (req, res) => {
 });
 
 // ===== Serve React frontend =====
-const frontendPath = path.join(__dirname, '../frontend/dist'); // Adjust relative to backend
+const frontendPath = path.join(__dirname, '../frontend/dist'); // adjust path if needed
 app.use(express.static(frontendPath));
 
-// Root and all React routes
+// Root and React routes
 app.get('*', (req, res) => {
   res.sendFile(path.resolve(frontendPath, 'index.html'));
 });
 
 // ===== Start server =====
-app.listen(PORT, () => console.log(`✅ Backend server running on port ${PORT}`));
+app.listen(PORT, () => {
+  console.log(`✅ Backend server running on port ${PORT}`);
+});
