@@ -67,8 +67,9 @@ function WelcomeModal() {
 
         <button
           onClick={handleClose}
-          className="absolute top-5 right-5 z-10 bg-white/20 hover:bg-white/30 backdrop-blur-sm rounded-full p-2.5 transition-all duration-300 transform hover:scale-110 hover:rotate-90 group shadow-lg"
+          className="absolute top-3 right-3 sm:top-5 sm:right-5 z-50 bg-white/20 hover:bg-white/30 backdrop-blur-sm rounded-full p-2.5 transition-all duration-300 transform hover:scale-110 hover:rotate-90 group shadow-lg cursor-pointer"
           aria-label="Close welcome message"
+          type="button"
         >
           <X className="w-6 h-6 text-white group-hover:text-yellow-400 transition-colors" />
         </button>
