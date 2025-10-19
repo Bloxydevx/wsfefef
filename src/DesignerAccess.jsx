@@ -8,7 +8,8 @@ function DesignerAccess() {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    if (password === "ConceptCustomsDesign") {
+    const correctPassword = import.meta.env.VITE_DESIGNER_PASSWORD || "ConceptCustomsDesign";
+    if (password === correctPassword) {
       setIsAuthenticated(true);
       setError("");
     } else {
