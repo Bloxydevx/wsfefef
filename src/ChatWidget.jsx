@@ -55,7 +55,7 @@ function ChatWidget() {
       console.error('Chat error:', error);
       setMessages([...updatedMessages, { 
         role: 'assistant', 
-        content: 'Sorry, I encountered an error. Please try joining our Discord at https://discord.gg/concept25 for immediate assistance!' 
+        content: "I'm currently unavailable, but I'd love to help you! For immediate assistance, please:\n\n• Join our Discord: https://discord.gg/concept25\n• Email us: support@conceptcustoms.com\n• Fill out an order form on the Ordering page\n\nOur team responds quickly!" 
       }]);
     } finally {
       setIsLoading(false);
@@ -67,7 +67,7 @@ function ChatWidget() {
       {!isOpen && (
         <button
           onClick={() => setIsOpen(true)}
-          className="fixed bottom-6 right-6 z-50 bg-gradient-to-r from-indigo-600 to-purple-700 text-white p-4 rounded-full shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-110"
+          className="fixed bottom-6 right-6 z-50 bg-gradient-to-r from-indigo-600 to-purple-700 text-white p-4 rounded-full shadow-lg hover:shadow-2xl transition-all duration-300 hover:scale-110 animate-bounce-subtle"
           aria-label="Open chat"
         >
           <MessageCircle size={28} />
@@ -75,7 +75,7 @@ function ChatWidget() {
       )}
 
       {isOpen && (
-        <div className="fixed bottom-6 right-6 z-50 w-96 max-w-[calc(100vw-3rem)] h-[600px] max-h-[calc(100vh-3rem)] bg-white rounded-lg shadow-2xl flex flex-col">
+        <div className="fixed bottom-6 right-6 z-50 w-96 max-w-[calc(100vw-3rem)] h-[600px] max-h-[calc(100vh-3rem)] bg-white rounded-lg shadow-2xl flex flex-col animate-slideUp">
           <div className="bg-gradient-to-r from-indigo-600 to-purple-700 text-white p-4 rounded-t-lg flex justify-between items-center">
             <div className="flex items-center gap-2">
               <MessageCircle size={24} />
