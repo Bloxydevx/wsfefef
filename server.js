@@ -18,10 +18,11 @@ if (missingVars.length > 0) {
   console.log('✅ All required environment variables are configured');
 }
 
-let countdownEndTime = Date.now() + (9 * 60 * 60 * 1000);
-let countdownActive = true;
+// Countdown is disabled by default - only activated when set via API
+let countdownEndTime = 0;
+let countdownActive = false;
 
-console.log(`🕐 Countdown initialized: ends at ${new Date(countdownEndTime).toLocaleString()}`);
+console.log('⏸️  Countdown is disabled by default. Use /api/set-countdown to enable.');
 
 app.get('/api/countdown-status', (req, res) => {
   try {
