@@ -14,6 +14,7 @@ The project is a React 18.2.0 single-page application built with Vite 5.0.0 and 
 - **AI Live Chat:** A floating widget powered by OpenAI GPT-3.5-turbo provides instant customer support across all pages, communicating securely via a backend API.
 - **Secure Backend API:** An Express.js server (`server.js`) handles sensitive operations such as Discord webhook integration for order submissions, designer password verification, and proxying OpenAI API calls, protecting API keys and sensitive information.
 - **Synchronized Coming Soon Countdown:** A server-managed countdown timer that displays the same time across all devices and users. When the timer ends, the website unlocks and stays unlocked until manually rescheduled. The countdown is stored in server memory (resets on server restart to 9 hours by default).
+- **Welcome Modal:** A polished welcome modal greets first-time visitors with animated elements, feature highlights, and branding. Shows once per user (persists via localStorage) whether they visit during or after the countdown. Includes X button, ESC key, and click-outside-to-close functionality.
 - **Responsive Design:** All pages and components are optimized for mobile, tablet, and desktop viewing, utilizing a hamburger menu for mobile navigation.
 - **Designer Access:** A password-protected section provides internal documentation for team designers.
 - **Portfolio Showcase:** A dedicated page highlights kingdummyj, Concept Custom's 2025 Best Designer, with detailed project samples showcasing Livery Designs, Clothing & Discord Development work.

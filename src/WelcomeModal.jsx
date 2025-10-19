@@ -7,20 +7,20 @@ function WelcomeModal() {
 
   useEffect(() => {
     const checkWelcomeStatus = async () => {
-      const hasSeenWelcome = sessionStorage.getItem('hasSeenWelcome');
+      const hasSeenWelcome = localStorage.getItem('hasSeenWelcome');
       
       if (!hasSeenWelcome) {
         try {
           const response = await fetch('/api/countdown-status');
           if (response.ok) {
             const data = await response.json();
-            if (!data.showCountdown) {
-              setShouldShow(true);
-              setTimeout(() => setIsVisible(true), 800);
-            }
+            setShouldShow(true);
+            setTimeout(() => setIsVisible(true), 800);
           }
         } catch (error) {
           console.error('Error checking countdown status:', error);
+          setShouldShow(true);
+          setTimeout(() => setIsVisible(true), 800);
         }
       }
     };
@@ -43,7 +43,7 @@ function WelcomeModal() {
 
   const handleClose = () => {
     setIsVisible(false);
-    sessionStorage.setItem('hasSeenWelcome', 'true');
+    localStorage.setItem('hasSeenWelcome', 'true');
   };
 
   if (!shouldShow || !isVisible) return null;

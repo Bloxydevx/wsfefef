@@ -1,5 +1,6 @@
 import { useState, useEffect } from 'react';
 import { Clock, Sparkles } from 'lucide-react';
+import WelcomeModal from './WelcomeModal';
 
 function ComingSoon() {
   const [timeLeft, setTimeLeft] = useState({
@@ -109,6 +110,8 @@ function ComingSoon() {
           <p className="text-yellow-400 font-semibold">Launching Soon...</p>
         </div>
       </div>
+
+      <WelcomeModal />
     </div>
   );
 }
