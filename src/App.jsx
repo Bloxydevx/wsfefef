@@ -1,62 +1,109 @@
-import React from "react";
-import { Routes, Route, Link, useLocation } from "react-router-dom";
-import { Link as ScrollLink } from "react-scroll";
+import React, { useState } from "react";
+import { Routes, Route, Link } from "react-router-dom";
+import { Menu, X } from "lucide-react";
 import Home from "./Home";
 import Ordering from "./Ordering";
 import DesignerAccess from "./DesignerAccess";
 import TermsOfService from "./TermsOfService";
 import PrivacyPolicy from "./PrivacyPolicy";
+import MeetTheTeam from "./MeetTheTeam";
 
 function App() {
-  const location = useLocation();
-  const isHomePage = location.pathname === "/";
+  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+
+  const toggleMobileMenu = () => {
+    setIsMobileMenuOpen(!isMobileMenuOpen);
+  };
+
+  const closeMobileMenu = () => {
+    setIsMobileMenuOpen(false);
+  };
 
   return (
     <div className="App">
       {/* Navigation Bar */}
       <nav className="fixed w-full top-0 left-0 z-50 bg-opacity-70 bg-gray-900 backdrop-blur-md shadow-lg">
-        <div className="container mx-auto p-4 flex justify-between items-center">
-          <Link to="/" className="text-3xl font-bold text-white hover:text-yellow-400 transition-colors">
-            Concept Customs
-          </Link>
-          <div className="space-x-6 text-white">
+        <div className="container mx-auto px-4 py-4">
+          <div className="flex justify-between items-center">
             <Link
               to="/"
-              className="hover:text-yellow-400 cursor-pointer transition-colors"
+              onClick={closeMobileMenu}
+              className="text-2xl sm:text-3xl font-bold text-white hover:text-yellow-400 transition-colors"
             >
-              Home
+              Concept Customs
             </Link>
-            <Link
-              to="/ordering"
-              className="hover:text-yellow-400 cursor-pointer transition-colors"
-            >
-              Ordering
-            </Link>
-            <Link
-              to="/designer-access"
-              className="hover:text-yellow-400 cursor-pointer transition-colors"
-            >
-              Designer Access
-            </Link>
-            {isHomePage && (
-              <ScrollLink
-                to="footer"
-                smooth={true}
-                duration={500}
-                className="hover:text-yellow-400 cursor-pointer transition-colors"
-              >
-                Contact
-              </ScrollLink>
-            )}
-            {!isHomePage && (
+
+            {/* Desktop Navigation */}
+            <div className="hidden md:flex space-x-6 text-white">
               <Link
-                to="/#footer"
+                to="/"
                 className="hover:text-yellow-400 cursor-pointer transition-colors"
               >
-                Contact
+                Home
               </Link>
-            )}
+              <Link
+                to="/ordering"
+                className="hover:text-yellow-400 cursor-pointer transition-colors"
+              >
+                Ordering
+              </Link>
+              <Link
+                to="/designer-access"
+                className="hover:text-yellow-400 cursor-pointer transition-colors"
+              >
+                Designer Access
+              </Link>
+              <Link
+                to="/meet-the-team"
+                className="hover:text-yellow-400 cursor-pointer transition-colors"
+              >
+                Meet the Team
+              </Link>
+            </div>
+
+            {/* Mobile Menu Button */}
+            <button
+              onClick={toggleMobileMenu}
+              className="md:hidden text-white hover:text-yellow-400 transition-colors"
+              aria-label="Toggle menu"
+            >
+              {isMobileMenuOpen ? <X size={28} /> : <Menu size={28} />}
+            </button>
           </div>
+
+          {/* Mobile Navigation */}
+          {isMobileMenuOpen && (
+            <div className="md:hidden mt-4 pb-4 space-y-3">
+              <Link
+                to="/"
+                onClick={closeMobileMenu}
+                className="block text-white hover:text-yellow-400 transition-colors py-2"
+              >
+                Home
+              </Link>
+              <Link
+                to="/ordering"
+                onClick={closeMobileMenu}
+                className="block text-white hover:text-yellow-400 transition-colors py-2"
+              >
+                Ordering
+              </Link>
+              <Link
+                to="/designer-access"
+                onClick={closeMobileMenu}
+                className="block text-white hover:text-yellow-400 transition-colors py-2"
+              >
+                Designer Access
+              </Link>
+              <Link
+                to="/meet-the-team"
+                onClick={closeMobileMenu}
+                className="block text-white hover:text-yellow-400 transition-colors py-2"
+              >
+                Meet the Team
+              </Link>
+            </div>
+          )}
         </div>
       </nav>
 
@@ -65,6 +112,7 @@ function App() {
         <Route path="/" element={<Home />} />
         <Route path="/ordering" element={<Ordering />} />
         <Route path="/designer-access" element={<DesignerAccess />} />
+        <Route path="/meet-the-team" element={<MeetTheTeam />} />
         <Route path="/tos" element={<TermsOfService />} />
         <Route path="/privacy" element={<PrivacyPolicy />} />
       </Routes>

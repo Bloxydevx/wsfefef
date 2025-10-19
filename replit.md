@@ -53,9 +53,14 @@ Multi-page application with React Router:
 1. **Home** - Main landing page (Hero + Features + Services sections)
 2. **Ordering** - Separate page with order form
 3. **Designer Access** - Password-protected designer handbook (password: ConceptCustomsDesign)
-4. **Contact** - Smooth scroll to footer (home page) or link (other pages)
+4. **Meet the Team** - Leadership team page with rally_boy143 and bloxydev__
 5. **Terms of Service** - Legal ToS page (/tos) - linked from footer
 6. **Privacy Policy** - Privacy policy page (/privacy) - linked from footer
+
+**Mobile Responsive:**
+- Hamburger menu on mobile devices (screens < 768px)
+- Desktop horizontal menu on larger screens
+- All pages optimized for mobile and tablet viewing
 
 ### Page Sections
 
@@ -85,6 +90,33 @@ Password-protected page for team designers:
   - Command reference
   - Bot hosting prices
   - Asset usage guidelines
+
+#### Meet the Team Page (`MeetTheTeam.jsx`)
+Showcases the leadership team:
+- **rally_boy143** - Executive, Lead Of Operations
+- **bloxydev__** - Co Executive, Co-Lead Of Operations
+- Each member has a gradient avatar with their initial
+- Includes call-to-action to join Discord
+- Fully responsive for mobile and desktop
+
+#### Terms of Service Page (`TermsOfService.jsx`)
+Complete legal terms covering:
+- Acceptance of terms
+- Eligibility requirements
+- User conduct policies
+- Content ownership
+- Moderation and termination
+- Effective date: October 18, 2025
+
+#### Privacy Policy Page (`PrivacyPolicy.jsx`)
+Comprehensive privacy policy including:
+- Information collection practices
+- Data usage and sharing
+- Security measures
+- User rights
+- Third-party service links
+- COPPA compliance
+- Effective date: October 18, 2025
 
 ### Component Details
 
@@ -207,10 +239,14 @@ Three main service offerings:
   - Added React Router for multi-page navigation
   - Created separate Ordering page with order form
   - Created password-protected Designer Access page with full Designer Handbook
-  - Updated navigation: Home | Ordering | Designer Access | Contact
+  - Updated navigation: Home | Ordering | Designer Access | Meet the Team
+  - Replaced "Contact" nav item with "Meet the Team" page
   - Kept Features section on main home page
   - Added Terms of Service page (/tos) with complete legal terms
   - Added Privacy Policy page (/privacy) with comprehensive privacy information
+  - Implemented mobile-responsive navigation with hamburger menu
+  - Added Meet the Team page featuring rally_boy143 (Executive) and bloxydev__ (Co Executive)
+  - All pages now fully mobile accessible with responsive design
 
 ---
 
