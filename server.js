@@ -26,14 +26,14 @@ console.log(`🕐 Countdown initialized: ends at ${new Date(countdownEndTime).to
 app.get('/api/countdown-status', (req, res) => {
   try {
     const now = Date.now();
-    const isActive = countdownActive && now < countdownEndTime;
-    const timeRemaining = countdownActive ? Math.max(0, countdownEndTime - now) : 0;
+    const timeRemaining = Math.max(0, countdownEndTime - now);
+    
+    const shouldShowCountdown = countdownActive && timeRemaining > 0;
 
     res.json({
-      active: isActive,
+      showCountdown: shouldShowCountdown,
       endTime: countdownEndTime,
-      timeRemaining: timeRemaining,
-      completed: countdownActive && now >= countdownEndTime
+      timeRemaining: timeRemaining
     });
   } catch (error) {
     console.error('Error getting countdown status:', error);

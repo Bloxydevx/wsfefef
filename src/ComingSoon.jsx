@@ -9,40 +9,41 @@ function ComingSoon() {
   });
 
   useEffect(() => {
-    const countdownEndTime = localStorage.getItem('countdownEndTime');
-    let endTime;
+    const fetchCountdownStatus = async () => {
+      try {
+        const response = await fetch('/api/countdown-status');
+        if (!response.ok) {
+          throw new Error('Failed to fetch countdown status');
+        }
+        const data = await response.json();
+        
+        if (!data.showCountdown) {
+          window.location.href = window.location.href.split('?')[0];
+          return;
+        }
 
-    if (!countdownEndTime) {
-      endTime = Date.now() + (9 * 60 * 60 * 1000);
-      localStorage.setItem('countdownEndTime', endTime);
-    } else {
-      endTime = parseInt(countdownEndTime);
-    }
+        const difference = data.timeRemaining;
 
-    const updateCountdown = () => {
-      const now = Date.now();
-      const difference = endTime - now;
-
-      if (difference <= 0) {
-        setTimeLeft({ hours: 0, minutes: 0, seconds: 0 });
-        if (localStorage.getItem('countdownCompleted') !== 'true') {
-          localStorage.setItem('countdownCompleted', 'true');
+        if (difference <= 0) {
+          setTimeLeft({ hours: 0, minutes: 0, seconds: 0 });
           setTimeout(() => {
             window.location.href = window.location.href.split('?')[0];
           }, 500);
+          return;
         }
-        return;
+
+        const hours = Math.floor(difference / (1000 * 60 * 60));
+        const minutes = Math.floor((difference % (1000 * 60 * 60)) / (1000 * 60));
+        const seconds = Math.floor((difference % (1000 * 60)) / 1000);
+
+        setTimeLeft({ hours, minutes, seconds });
+      } catch (error) {
+        console.error('Error fetching countdown:', error);
       }
-
-      const hours = Math.floor(difference / (1000 * 60 * 60));
-      const minutes = Math.floor((difference % (1000 * 60 * 60)) / (1000 * 60));
-      const seconds = Math.floor((difference % (1000 * 60)) / 1000);
-
-      setTimeLeft({ hours, minutes, seconds });
     };
 
-    updateCountdown();
-    const interval = setInterval(updateCountdown, 1000);
+    fetchCountdownStatus();
+    const interval = setInterval(fetchCountdownStatus, 1000);
 
     return () => clearInterval(interval);
   }, []);

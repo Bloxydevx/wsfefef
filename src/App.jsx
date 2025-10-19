@@ -15,20 +15,26 @@ import WelcomeModal from "./WelcomeModal";
 function App() {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const [showComingSoon, setShowComingSoon] = useState(true);
+  const [isLoading, setIsLoading] = useState(true);
 
   useEffect(() => {
-    const countdownCompleted = localStorage.getItem('countdownCompleted');
-    const countdownEndTime = localStorage.getItem('countdownEndTime');
-
-    if (countdownCompleted === 'true') {
-      setShowComingSoon(false);
-    } else if (countdownEndTime) {
-      const endTime = parseInt(countdownEndTime);
-      if (Date.now() >= endTime) {
-        localStorage.setItem('countdownCompleted', 'true');
+    const checkCountdownStatus = async () => {
+      try {
+        const response = await fetch('/api/countdown-status');
+        if (!response.ok) {
+          throw new Error('Failed to fetch countdown status');
+        }
+        const data = await response.json();
+        setShowComingSoon(data.showCountdown);
+      } catch (error) {
+        console.error('Error checking countdown:', error);
         setShowComingSoon(false);
+      } finally {
+        setIsLoading(false);
       }
-    }
+    };
+
+    checkCountdownStatus();
   }, []);
 
   const toggleMobileMenu = () => {
@@ -38,6 +44,14 @@ function App() {
   const closeMobileMenu = () => {
     setIsMobileMenuOpen(false);
   };
+
+  if (isLoading) {
+    return (
+      <div className="min-h-screen bg-gradient-to-br from-indigo-900 via-purple-900 to-pink-900 flex items-center justify-center">
+        <div className="text-white text-2xl">Loading...</div>
+      </div>
+    );
+  }
 
   if (showComingSoon) {
     return <ComingSoon />;
