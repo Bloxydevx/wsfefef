@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { Routes, Route, Link } from "react-router-dom";
 import { Menu, X } from "lucide-react";
 import Home from "./Home";
@@ -9,9 +9,27 @@ import TermsOfService from "./TermsOfService";
 import PrivacyPolicy from "./PrivacyPolicy";
 import MeetTheTeam from "./MeetTheTeam";
 import ChatWidget from "./ChatWidget";
+import ComingSoon from "./ComingSoon";
+import WelcomeModal from "./WelcomeModal";
 
 function App() {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+  const [showComingSoon, setShowComingSoon] = useState(true);
+
+  useEffect(() => {
+    const countdownCompleted = localStorage.getItem('countdownCompleted');
+    const countdownEndTime = localStorage.getItem('countdownEndTime');
+
+    if (countdownCompleted === 'true') {
+      setShowComingSoon(false);
+    } else if (countdownEndTime) {
+      const endTime = parseInt(countdownEndTime);
+      if (Date.now() >= endTime) {
+        localStorage.setItem('countdownCompleted', 'true');
+        setShowComingSoon(false);
+      }
+    }
+  }, []);
 
   const toggleMobileMenu = () => {
     setIsMobileMenuOpen(!isMobileMenuOpen);
@@ -21,8 +39,14 @@ function App() {
     setIsMobileMenuOpen(false);
   };
 
+  if (showComingSoon) {
+    return <ComingSoon />;
+  }
+
   return (
     <div className="App">
+      <WelcomeModal />
+      
       {/* Navigation Bar */}
       <nav className="fixed w-full top-0 left-0 z-50 bg-opacity-70 bg-gray-900 backdrop-blur-md shadow-lg transition-all duration-300">
         <div className="container mx-auto px-4 py-4">
