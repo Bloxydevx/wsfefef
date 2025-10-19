@@ -201,8 +201,8 @@ app.post('/api/chat', async (req, res) => {
   }
 });
 
-// ✅ Serve index.html for all unmatched routes
-app.get('/*', (req, res) => {
+// ✅ Express 5 compatible catch-all route
+app.use((req, res) => {
   res.sendFile(path.join(__dirname, 'index.html'));
 });
 
